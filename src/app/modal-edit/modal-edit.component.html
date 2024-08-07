@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="warning" (click)="cancel()">
+        <ion-icon name="close-circle"></ion-icon>
+        Cancelar
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Editar producto</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" color="success" shape="round" class="custom-button">
+        <ion-icon name="checkmark-done"></ion-icon>
+        Editar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="editProductForm">
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre del Producto</ion-label>
+      <ion-input formControlName="name" placeholder="Nombre del Producto"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Código</ion-label>
+      <ion-input formControlName="code" placeholder="Código" [disabled]="item !== null"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Categoría</ion-label>
+      <ion-input formControlName="category" placeholder="Categoría"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-input formControlName="description" placeholder="Descripción"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input type="number" formControlName="price" placeholder="Precio"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Cantidad</ion-label>
+      <ion-input type="number" formControlName="amount" placeholder="Cantidad"></ion-input>
+    </ion-item>
+  </form>
+</ion-content>
